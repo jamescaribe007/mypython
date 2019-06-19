@@ -1,4 +1,4 @@
-#!/usr/local/python3.7
+#!/usr/local/bin/python3.7
 
 def deco(*args, **kwargs):
     def toUpper(func):
