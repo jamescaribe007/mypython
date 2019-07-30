@@ -22,14 +22,24 @@ def create():
     tel = input("Tel. number: ")
     details = {"number":number, "name":name, "lname":lname, "mail":mail, "tel":tel}
     save(details)
-
 def save(details):
-    line = ""def display():
+    line = ""
+    for item in details:
+        if line == "":
+           line = line+details[item]
+        else:
+           line = line+":"+details[item]
+    toFile = open("accounts.csv","a+")
+    toFile.write(line+"\n")
+    toFile.close()
+    print("New account has been created")
+
+def display():
     fromFile = open("accounts.csv", "r")
     content = fromFile.readlines()
     for record in content:
         print(record, end ="")
-
+        
 def menu():
     print("Bank Interntional System")
     print("------------------------")
